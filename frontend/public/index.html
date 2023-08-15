@@ -2,14 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/eslip-temp-logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="electronic bank deposit slip registration system"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/eslip-temp-logo" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -24,7 +24,38 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Eslip</title>
+    <meta content="Eslip" name="description" />
+    <meta content="langson" name="author" />
+    <!-- App Icons -->
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="/theme/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/theme/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/theme/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/theme/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/theme/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/theme/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/theme/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/theme/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/theme/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/theme/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/theme/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/theme/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/theme/images/icons/favicon-16x16.png"> -->
+    <link rel="manifest" href="/theme/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/theme/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+        <!-- CORE CSS FRAMEWORK - START -->
+    <link href="/theme/css/preloader.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/theme/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/theme/fonts/mdi/materialdesignicons.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/theme/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+   <link href="/theme/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" id="main-style"/>
+    <!-- CORE CSS TEMPLATE - END -->
+
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,5 +70,76 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- PWA Service Worker Code -->
+
+<script type="text/javascript">
+  // This is the "Offline copy of pages" service worker
+
+// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+
+// Check compatibility for the browser we're running this in
+// if ("serviceWorker" in navigator) {
+//   if (navigator.serviceWorker.controller) {
+//     console.log("[PWA Builder] active service worker found, no need to register");
+//   } else {
+//     // Register the service worker
+//     navigator.serviceWorker
+//       .register("pwabuilder-sw.js", {
+//         scope: "./"
+//       })
+//       .then(function (reg) {
+//         console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+//       });
+//   }
+// }
+
+  </script>
+
+
+  <!-- LOAD FILES AT PAGE END FOR FASTER LOADING -->
+
+  <!-- CORE JS FRAMEWORK - START --> 
+  <script src="/theme/js/jquery-2.2.4.min.js"></script>
+  <script src="/theme/js/materialize.js"></script>
+  <script src="/theme/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script> 
+  <!-- CORE JS FRAMEWORK - END --> 
+
+
+  <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+  <script type="text/javascript">
+  $(document).ready(function(){
+      
+      // $(".carousel-fullscreen.carousel-slider").carousel({
+      //   fullWidth: true,
+      //   indicators: true
+      // });
+      // setTimeout(autoplay, 3500);
+      // function autoplay() {
+      //     $(".carousel").carousel("next");
+      //     setTimeout(autoplay, 3500);
+      // }
+      //    $(".slider3").slider({
+      //           indicators: false,
+      //           height: 200,
+      //   });
+
+  }); 
+    </script><!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END --> 
+
+
+  <!-- CORE TEMPLATE JS - START --> 
+  <script src="/theme/js/init.js"></script>
+  <script src="/theme/js/settings.js"></script>
+
+  <script src="/theme/js/scripts.js"></script>
+
+  <!-- END CORE TEMPLATE JS - END --> 
+
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(){
+      $('.preloader-background').delay(10).fadeOut('slow');
+    });
+  </script>
   </body>
 </html>
