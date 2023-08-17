@@ -1,0 +1,148 @@
+THIS FILE UNDERLINES THE WHOLE APPS LOGIC DETAIL BY DETAIL
+
+It's possible to run the app locally inside the banks, and use the router's ip to allow fast usage by users
+
+for school accounts the account number for a school will always be preput, and depending on the bank it 
+can or cannot be shown to the client. 
+in this case, you put in a studentID
+
+user can create and submit a deposit request
+user can see the deposit they made on their app - plus the depositer(the tailor)
+
+
+
+
+
+
+
+Account Information
+Transactions
+Loans and Credit
+Online and Mobile Banking
+Foreign Exchange and International Transactions
+Account Management
+Investments and Retirement Planning
+Fees and Charges
+Security and Fraud Prevention
+General Financial Advice
+Business Banking (for business customers)
+Estate Planning and Trust Services
+
+How can I open a new account?
+What types of accounts do you offer?
+How do I check my account balance?
+Can you explain the transactions on my account statement?
+How do I update my account information, such as my address or phone number?
+Transactions:
+
+How do I deposit money into my account?
+How can I withdraw cash from my account?
+Can I get a cashier's check or money order?
+How do I transfer money to another account, both within the bank and to other banks?
+Can I set up automatic bill payments?
+Loans and Credit:
+
+What types of loans do you offer?
+How do I apply for a loan?
+What are the interest rates for loans and credit products?
+What is the process for getting a credit card?
+How do I qualify for a mortgage?
+Online and Mobile Banking:
+
+How do I sign up for online banking?
+Can you help me with issues related to my online banking account?
+How do I reset my password?
+What security measures are in place for online transactions?
+Foreign Exchange and International Transactions:
+
+What are the current exchange rates for foreign currencies?
+How do I buy or sell foreign currency?
+Can you help me with an international money transfer?
+Account Management:
+
+How do I set up direct deposit?
+Can I link my accounts together?
+How do I close an account?
+How can I order checks?
+Investments and Retirement Planning:
+
+What investment options do you offer?
+How do I open an investment account?
+Can you help me with retirement planning?
+What are the risks and potential returns of different investment products?
+
+
+What are the fees associated with my account?
+Can you explain a fee that I see on my account statement?
+Are there ways to avoid certain fees?
+
+
+How can I protect my account from fraud?
+What should I do if I suspect fraudulent activity on my account?
+Can you help me report a lost or stolen card?
+
+
+Can you provide advice on budgeting and saving?
+How can I improve my credit score?
+What are some ways to manage my debt?
+
+
+How can I open a business account?
+What business loan options are available?
+Can you assist with payroll processing?
+
+
+How can I set up a trust account?
+What estate planning services do you offer?
+
+
+
+
+
+
+
+
+How can I open a new account?
+What types of accounts do you offer?
+How do I check my account balance?
+Can you explain the transactions on my account statement?
+How do I update my account information, such as my address or phone number?
+How do I deposit money into my account?
+How can I withdraw cash from my account?
+Can I get a cashier's check or money order?
+How do I transfer money to another account, both within the bank and to other banks?
+Can I set up automatic bill payments?
+What types of loans do you offer?
+How do I apply for a loan?
+What are the interest rates for loans and credit products?
+What is the process for getting a credit card?
+How do I qualify for a mortgage?
+How do I sign up for online banking?
+Can you help me with issues related to my online banking account?
+How do I reset my password?
+What security measures are in place for online transactions?
+What are the current exchange rates for foreign currencies?
+How do I buy or sell foreign currency?
+Can you help me with an international money transfer?
+How do I set up direct deposit?
+Can I link my accounts together?
+How do I close an account?
+How can I order checks?
+What investment options do you offer?
+How do I open an investment account?
+Can you help me with retirement planning?
+What are the risks and potential returns of different investment products?
+What are the fees associated with my account?
+Can you explain a fee that I see on my account statement?
+Are there ways to avoid certain fees?
+How can I protect my account from fraud?
+What should I do if I suspect fraudulent activity on my account?
+Can you help me report a lost or stolen card?
+Can you provide advice on budgeting and saving?
+How can I improve my credit score?
+What are some ways to manage my debt?
+How can I open a business account?
+What business loan options are available?
+Can you assist with payroll processing?
+How can I set up a trust account?
+What estate planning services do you offer?

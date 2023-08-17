@@ -106,7 +106,15 @@
 
 
   <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START --> 
+  <script>
+    const backButton = document.getElementById('backButton');
+
+    backButton.addEventListener('click', () => {
+      window.history.back();
+    });
+  </script>
   <script type="text/javascript">
+    
   $(document).ready(function(){
       
       // $(".carousel-fullscreen.carousel-slider").carousel({
