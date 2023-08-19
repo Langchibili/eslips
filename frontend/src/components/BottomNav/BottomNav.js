@@ -13,7 +13,7 @@ export default function BottomNav() {
   return (
     <Box sx={{ position: 'fixed', zIndex:'1', bottom: 0, left: 0, right: 0 }} elevation={3}>
       <BottomNavigation
-        showLabels
+        showLabels={true}
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);

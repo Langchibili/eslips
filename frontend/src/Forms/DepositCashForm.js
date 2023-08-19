@@ -1,6 +1,7 @@
 import React from 'react';
 import FormGroup from '@mui/material/FormGroup';
 import AccountNumberInput from '../components/Includes/AccountNumberInput';
+import { api_url } from '../constants';
 
 export default class DepositCashForm extends React.Component {
     constructor(props){
@@ -20,9 +21,8 @@ export default class DepositCashForm extends React.Component {
         this.depositerPhoneNumberRef = React.createRef();
     }
 
-    handleSubmit = (e) => {
+    handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('h')
         const accountFirstName = this.accountFirstNameRef.current.value;
         const accountLastName = this.accountLastNameRef.current.value;
         const accountPhoneNumber = this.accountPhoneNumberRef.current.value;
@@ -30,8 +30,41 @@ export default class DepositCashForm extends React.Component {
         const depositerLastName = this.depositerLastNameRef.current.value;
         const depositerPhoneNumber = this.depositerPhoneNumberRef.current.value;
         const accountNumber = this.state.accountNumber
+        const depositRequestBody = {
+            accountFirstName: accountFirstName,
+            accountLastName: accountLastName,
+            accountPhoneNumber: accountPhoneNumber,
+            depositerFirstName: depositerFirstName,
+            depositerLastName: depositerLastName,
+            depositerPhoneNumber: depositerPhoneNumber,
+            accountNumber:accountNumber
+        }
+        
         if(accountNumber.length >= 8){
-              // submit
+            try {
+                const response = await fetch(api_url+'/deposits', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(depositRequestBody),
+                });
+    
+                if (response.ok) {
+                    const responseData = await response.json();
+                    console.log(responseData)
+                } else {
+                    this.setState({
+                        hasError:true,
+                        error:'Failed to submit deposit, please try again later!'
+                    })
+                }
+            } catch (error) {
+                this.setState({
+                    hasError:true,
+                    error:'Failed to submit deposit, please try again later!'
+                })
+            }
         }
         else{
             this.setState({
@@ -42,7 +75,8 @@ export default class DepositCashForm extends React.Component {
     }
     updateAccountNumber = (accountNumber)=>{
         this.setState({
-            accountNumber:accountNumber
+            accountNumber:accountNumber,
+            hasError: false
         })
     }
     render() {
@@ -66,6 +100,13 @@ export default class DepositCashForm extends React.Component {
                 <label htmlFor="account_phone_number" className=""> Account Phone Number </label>
             </div>
 
+            <div className="input-field col s12"> 
+                <i className="mdi mdi-account-outline prefix" />
+                <input id="deposit_amount" ref={this.depositAmountRef} type="text" />
+                <label htmlFor="deposit_amount" className=""> Deposit Amount </label>
+            </div>
+            Notes:
+            k100: 10, k50: 2:, etc  | Table here 
             <div className="input-field col s12"> 
                 <i className="mdi mdi-account-outline prefix" />
                 <input id="depositer_first_name" ref={this.depositerFirstNameRef}  type="text" className="validate" />

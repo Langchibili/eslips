@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "querieds",
+  "info": {
+    "name": "Queried",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "query": {
+      "type": "string"
+    },
+    "bankerFirstName": {
+      "type": "string"
+    },
+    "bankerLastName": {
+      "type": "string"
+    },
+    "bankerEmployeeId": {
+      "type": "string"
+    },
+    "clientFirstName": {
+      "type": "string"
+    },
+    "clientLastName": {
+      "type": "string"
+    },
+    "belongsToBank": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

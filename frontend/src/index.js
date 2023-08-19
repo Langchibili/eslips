@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import './index.css';
+import './normalize.css';
 import reportWebVitals from './reportWebVitals';
 import BottomNav from './components/BottomNav/BottomNav';
 import DepositType from './components/Views/DepositType';

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "depositeds",
+  "info": {
+    "name": "Deposited",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "accountFirstName": {
+      "type": "string"
+    },
+    "accountLastName": {
+      "type": "string"
+    },
+    "depositerFirstName": {
+      "type": "string"
+    },
+    "depositerLastName": {
+      "type": "string"
+    },
+    "accountNumber": {
+      "type": "string"
+    },
+    "depositerPhoneNumber": {
+      "type": "string"
+    },
+    "accountPhoneNumber": {
+      "type": "string"
+    },
+    "depositDate": {
+      "type": "date"
+    },
+    "depositedTime": {
+      "type": "datetime"
+    },
+    "tailorFirstName": {
+      "type": "string"
+    },
+    "tailorLastName": {
+      "type": "string"
+    },
+    "tailorEmployeeId": {
+      "type": "string"
+    }
+  }
+}

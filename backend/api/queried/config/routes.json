@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/querieds",
+      "handler": "queried.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/querieds/count",
+      "handler": "queried.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/querieds/:id",
+      "handler": "queried.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/querieds",
+      "handler": "queried.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/querieds/:id",
+      "handler": "queried.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/querieds/:id",
+      "handler": "queried.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deposits",
+  "info": {
+    "name": "deposits",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "accountFirstName": {
+      "type": "string"
+    },
+    "accountLastName": {
+      "type": "string"
+    },
+    "depositerFirstName": {
+      "type": "string"
+    },
+    "depositerLastName": {
+      "type": "string"
+    },
+    "accountNumber": {
+      "type": "string",
+      "required": true
+    },
+    "depositerPhoneNumber": {
+      "type": "string"
+    },
+    "accountPhoneNumber": {
+      "type": "string"
+    }
+  }
+}

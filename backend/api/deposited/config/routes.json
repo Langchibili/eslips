@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/depositeds",
+      "handler": "deposited.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/depositeds/count",
+      "handler": "deposited.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/depositeds/:id",
+      "handler": "deposited.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/depositeds",
+      "handler": "deposited.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/depositeds/:id",
+      "handler": "deposited.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/depositeds/:id",
+      "handler": "deposited.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}
