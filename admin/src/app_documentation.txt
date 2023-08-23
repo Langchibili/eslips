@@ -1,0 +1,19 @@
+Admin can see the analytics 
+     -  number of deposits
+     -  number of queries
+   
+      can create user accounts
+      - tailor 
+      - banker
+
+A tailor can only handle deposits
+A banker
+
+
+THE ADMIN DASHBOARD SHALL BE MADE SEPARATELY, 
+BUT THE BANKER DASHBOARD SHOULD BE MADE SEPARATELY AS WELL
+
+deposits queries deposited queried
+
+A banker can edit before depositing or finishing a query, coz a user sometimes would have made collections
+AS far as the creation of users, the admin will be creating users from a strapi backend
