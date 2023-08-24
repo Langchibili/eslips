@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clients",
+  "info": {
+    "name": "clients",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "clientId": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "deposits": {
+      "collection": "deposits"
+    },
+    "depositeds": {
+      "collection": "deposited"
+    },
+    "queries": {
+      "collection": "queries"
+    },
+    "querieds": {
+      "collection": "queried"
+    }
+  }
+}

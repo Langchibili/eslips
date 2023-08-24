@@ -547,6 +547,12 @@
             "type": "boolean",
             "default": true
           },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -579,6 +585,12 @@
           "belongsToBank": {
             "type": "boolean",
             "default": true
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",

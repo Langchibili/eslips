@@ -9,7 +9,7 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
-import { api_url } from '../constants';
+import { api_url,getClientId } from '../constants';
 
 export default class QueryForm extends React.Component {
     constructor(props){
@@ -40,6 +40,7 @@ export default class QueryForm extends React.Component {
         const otherQuery = this.otherQueryRef.current? this.otherQueryRef.current.value : ''
         const queryType = this.state.queryType
         let query = this.state.query
+        const clientId = getClientId()
         if(query.length < 0){ // then query is not set
             query = 'other'
         }
@@ -52,7 +53,8 @@ export default class QueryForm extends React.Component {
             queryType:queryType,
             query:query,
             belongsToBank: this.state.belongsToBank,
-            otherQuery: otherQuery
+            otherQuery: otherQuery,
+            clientId: clientId
         }
 
         if(clientFirstName.length < 1){ // client must include name

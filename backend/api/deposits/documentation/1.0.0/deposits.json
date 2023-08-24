@@ -544,6 +544,12 @@
           "accountPhoneNumber": {
             "type": "string"
           },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -574,6 +580,12 @@
             "type": "string"
           },
           "accountPhoneNumber": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
             "type": "string"
           },
           "published_at": {

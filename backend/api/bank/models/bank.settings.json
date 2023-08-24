@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banks",
+  "info": {
+    "name": "Bank",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "bank_icon": {
+      "type": "string"
+    },
+    "bank_color": {
+      "type": "string"
+    },
+    "branches": {
+      "collection": "branch"
+    }
+  }
+}

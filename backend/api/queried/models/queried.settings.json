@@ -36,6 +36,12 @@
     "belongsToBank": {
       "type": "boolean",
       "default": true
+    },
+    "clientId": {
+      "type": "string"
+    },
+    "branchId": {
+      "type": "string"
     }
   }
 }

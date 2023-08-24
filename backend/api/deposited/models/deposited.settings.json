@@ -33,12 +33,6 @@
     "accountPhoneNumber": {
       "type": "string"
     },
-    "depositDate": {
-      "type": "date"
-    },
-    "depositedTime": {
-      "type": "datetime"
-    },
     "tailorFirstName": {
       "type": "string"
     },
@@ -46,6 +40,12 @@
       "type": "string"
     },
     "tailorEmployeeId": {
+      "type": "string"
+    },
+    "clientId": {
+      "type": "string"
+    },
+    "branchId": {
       "type": "string"
     }
   }

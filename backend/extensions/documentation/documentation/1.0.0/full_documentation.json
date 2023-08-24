@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "08/19/2023 3:15:32 PM"
+    "x-generation-date": "08/24/2023 6:58:16 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -45,6 +45,1539 @@
     }
   ],
   "paths": {
+    "/banks": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Bank"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bank"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bank"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bank"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBank"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/banks/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bank"
+        ],
+        "parameters": []
+      }
+    },
+    "/banks/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bank"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bank"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Bank"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bank"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBank"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Bank"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/branches": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Branch"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Branch"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Branch"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Branch"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBranch"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/branches/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Branch"
+        ],
+        "parameters": []
+      }
+    },
+    "/branches/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Branch"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Branch"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Branch"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Branch"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewBranch"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Branch"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/clients": {
+      "get": {
+        "deprecated": false,
+        "description": "Find all the clients's records",
+        "responses": {
+          "200": {
+            "description": "Retrieve clients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Clients"
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Clients"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new clients record",
+        "responses": {
+          "200": {
+            "description": "Retrieve clients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clients"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Clients"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewClients"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/clients/count": {
+      "get": {
+        "deprecated": false,
+        "description": "Retrieve the number of clients documents",
+        "responses": {
+          "200": {
+            "description": "Retrieve clients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Clients"
+        ],
+        "parameters": []
+      }
+    },
+    "/clients/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "Find one clients record",
+        "responses": {
+          "200": {
+            "description": "Retrieve clients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clients"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Clients"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a single clients record",
+        "responses": {
+          "200": {
+            "description": "Retrieve clients document(s)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Clients"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Clients"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewClients"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a single clients record",
+        "responses": {
+          "200": {
+            "description": "deletes a single clients based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Clients"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
     "/depositeds": {
       "get": {
         "deprecated": false,
@@ -4318,6 +5851,814 @@
   },
   "components": {
     "schemas": {
+      "Bank": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "bank_icon": {
+            "type": "string"
+          },
+          "bank_color": {
+            "type": "string"
+          },
+          "branches": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "bank": {
+                  "type": "string"
+                },
+                "deposits": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "depositeds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "queries": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "querieds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewBank": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "bank_icon": {
+            "type": "string"
+          },
+          "bank_color": {
+            "type": "string"
+          },
+          "branches": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Branch": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "bank": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "bank_icon": {
+                "type": "string"
+              },
+              "bank_color": {
+                "type": "string"
+              },
+              "branches": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "deposits": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "accountNumber"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "accountFirstName": {
+                  "type": "string"
+                },
+                "accountLastName": {
+                  "type": "string"
+                },
+                "depositerFirstName": {
+                  "type": "string"
+                },
+                "depositerLastName": {
+                  "type": "string"
+                },
+                "accountNumber": {
+                  "type": "string"
+                },
+                "depositerPhoneNumber": {
+                  "type": "string"
+                },
+                "accountPhoneNumber": {
+                  "type": "string"
+                },
+                "clientId": {
+                  "type": "string"
+                },
+                "branchId": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "depositeds": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "accountFirstName": {
+                  "type": "string"
+                },
+                "accountLastName": {
+                  "type": "string"
+                },
+                "depositerFirstName": {
+                  "type": "string"
+                },
+                "depositerLastName": {
+                  "type": "string"
+                },
+                "accountNumber": {
+                  "type": "string"
+                },
+                "depositerPhoneNumber": {
+                  "type": "string"
+                },
+                "accountPhoneNumber": {
+                  "type": "string"
+                },
+                "tailorFirstName": {
+                  "type": "string"
+                },
+                "tailorLastName": {
+                  "type": "string"
+                },
+                "tailorEmployeeId": {
+                  "type": "string"
+                },
+                "clientId": {
+                  "type": "string"
+                },
+                "branchId": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "queries": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Account_Information",
+                    "Transactions",
+                    "Loans_and_Credit",
+                    "Online_and_Mobile_Banking",
+                    "Foreign_Exchange_and_International_Transactions",
+                    "Account_Management",
+                    "Investments_and_Retirement_Planning",
+                    "Fees_and_Charges",
+                    "Security_and_Fraud_Prevention",
+                    "General_Financial_Advice",
+                    "Business_Banking_for_business_customers",
+                    "Estate_Planning_and_Trust_Services",
+                    "other"
+                  ]
+                },
+                "query": {
+                  "type": "string",
+                  "enum": [
+                    "How_can_I_open_a_new_account",
+                    "What_types_of_accounts_do_you_offer",
+                    "How_do_I_check_my_account_balance",
+                    "Can_you_explain_the_transactions_on_my_account_statement",
+                    "How_do_I_update_my_account_information_such_as_my_address_or_phone_number",
+                    "How_do_I_deposit_money_into_my_account",
+                    "How_can_I_withdraw_cash_from_my_account",
+                    "Can_I_get_a_cashiers_check_or_money_order",
+                    "How_do_I_transfer_money_to_another_account_both_within_the_bank_and_to_other_banks",
+                    "Can_I_set_up_automatic_bill_payments",
+                    "What_types_of_loans_do_you_offer",
+                    "How_do_I_apply_for_a_loan",
+                    "What_are_the_interest_rates_for_loans_and_credit_products",
+                    "What_is_the_process_for_getting_a_credit_card",
+                    "How_do_I_qualify_for_a_mortgage",
+                    "How_do_I_sign_up_for_online_banking",
+                    "Can_you_help_me_with_issues_related_to_my_online_banking_account",
+                    "How_do_I_reset_my_password",
+                    "What_security_measures_are_in_place_for_online_transactions",
+                    "What_are_the_current_exchange_rates_for_foreign_currencies",
+                    "How_do_I_buy_or_sell_foreign_currency",
+                    "Can_you_help_me_with_an_international_money_transfer",
+                    "How_do_I_set_up_direct_deposit",
+                    "Can_I_link_my_accounts_together",
+                    "How_do_I_close_an_account",
+                    "How_can_I_order_checks",
+                    "What_investment_options_do_you_offer",
+                    "How_do_I_open_an_investment_account",
+                    "Can_you_help_me_with_retirement_planning",
+                    "What_are_the_risks_and_potential_returns_of_different_investment_products",
+                    "What_are_the_fees_associated_with_my_account",
+                    "Can_you_explain_a_fee_that_I_see_on_my_account_statement",
+                    "Are_there_ways_to_avoid_certain_fees",
+                    "How_can_I_protect_my_account_from_fraud",
+                    "What_should_I_do_if_I_suspect_fraudulent_activity_on_my_account",
+                    "Can_you_help_me_report_a_lost_or_stolen_card",
+                    "Can_you_provide_advice_on_budgeting_and_saving",
+                    "How_can_I_improve_my_credit_score",
+                    "What_are_some_ways_to_manage_my_debt",
+                    "How_can_I_open_a_business_account",
+                    "What_business_loan_options_are_available",
+                    "Can_you_assist_with_payroll_processing",
+                    "How_can_I_set_up_a_trust_account",
+                    "What_estate_planning_services_do_you_offer",
+                    "other"
+                  ]
+                },
+                "clientFirstName": {
+                  "type": "string"
+                },
+                "clientLastName": {
+                  "type": "string"
+                },
+                "belongsToBank": {
+                  "type": "boolean"
+                },
+                "otherQuery": {
+                  "type": "string"
+                },
+                "clientId": {
+                  "type": "string"
+                },
+                "branchId": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "querieds": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "query": {
+                  "type": "string"
+                },
+                "bankerFirstName": {
+                  "type": "string"
+                },
+                "bankerLastName": {
+                  "type": "string"
+                },
+                "bankerEmployeeId": {
+                  "type": "string"
+                },
+                "clientFirstName": {
+                  "type": "string"
+                },
+                "clientLastName": {
+                  "type": "string"
+                },
+                "belongsToBank": {
+                  "type": "boolean"
+                },
+                "clientId": {
+                  "type": "string"
+                },
+                "branchId": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewBranch": {
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "bank": {
+            "type": "string"
+          },
+          "deposits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "depositeds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "queries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "querieds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Clients": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "deposits": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "accountNumber"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "accountFirstName": {
+                  "type": "string"
+                },
+                "accountLastName": {
+                  "type": "string"
+                },
+                "depositerFirstName": {
+                  "type": "string"
+                },
+                "depositerLastName": {
+                  "type": "string"
+                },
+                "accountNumber": {
+                  "type": "string"
+                },
+                "depositerPhoneNumber": {
+                  "type": "string"
+                },
+                "accountPhoneNumber": {
+                  "type": "string"
+                },
+                "clientId": {
+                  "type": "string"
+                },
+                "branchId": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "depositeds": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "accountFirstName": {
+                  "type": "string"
+                },
+                "accountLastName": {
+                  "type": "string"
+                },
+                "depositerFirstName": {
+                  "type": "string"
+                },
+                "depositerLastName": {
+                  "type": "string"
+                },
+                "accountNumber": {
+                  "type": "string"
+                },
+                "depositerPhoneNumber": {
+                  "type": "string"
+                },
+                "accountPhoneNumber": {
+                  "type": "string"
+                },
+                "tailorFirstName": {
+                  "type": "string"
+                },
+                "tailorLastName": {
+                  "type": "string"
+                },
+                "tailorEmployeeId": {
+                  "type": "string"
+                },
+                "clientId": {
+                  "type": "string"
+                },
+                "branchId": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "queries": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Account_Information",
+                    "Transactions",
+                    "Loans_and_Credit",
+                    "Online_and_Mobile_Banking",
+                    "Foreign_Exchange_and_International_Transactions",
+                    "Account_Management",
+                    "Investments_and_Retirement_Planning",
+                    "Fees_and_Charges",
+                    "Security_and_Fraud_Prevention",
+                    "General_Financial_Advice",
+                    "Business_Banking_for_business_customers",
+                    "Estate_Planning_and_Trust_Services",
+                    "other"
+                  ]
+                },
+                "query": {
+                  "type": "string",
+                  "enum": [
+                    "How_can_I_open_a_new_account",
+                    "What_types_of_accounts_do_you_offer",
+                    "How_do_I_check_my_account_balance",
+                    "Can_you_explain_the_transactions_on_my_account_statement",
+                    "How_do_I_update_my_account_information_such_as_my_address_or_phone_number",
+                    "How_do_I_deposit_money_into_my_account",
+                    "How_can_I_withdraw_cash_from_my_account",
+                    "Can_I_get_a_cashiers_check_or_money_order",
+                    "How_do_I_transfer_money_to_another_account_both_within_the_bank_and_to_other_banks",
+                    "Can_I_set_up_automatic_bill_payments",
+                    "What_types_of_loans_do_you_offer",
+                    "How_do_I_apply_for_a_loan",
+                    "What_are_the_interest_rates_for_loans_and_credit_products",
+                    "What_is_the_process_for_getting_a_credit_card",
+                    "How_do_I_qualify_for_a_mortgage",
+                    "How_do_I_sign_up_for_online_banking",
+                    "Can_you_help_me_with_issues_related_to_my_online_banking_account",
+                    "How_do_I_reset_my_password",
+                    "What_security_measures_are_in_place_for_online_transactions",
+                    "What_are_the_current_exchange_rates_for_foreign_currencies",
+                    "How_do_I_buy_or_sell_foreign_currency",
+                    "Can_you_help_me_with_an_international_money_transfer",
+                    "How_do_I_set_up_direct_deposit",
+                    "Can_I_link_my_accounts_together",
+                    "How_do_I_close_an_account",
+                    "How_can_I_order_checks",
+                    "What_investment_options_do_you_offer",
+                    "How_do_I_open_an_investment_account",
+                    "Can_you_help_me_with_retirement_planning",
+                    "What_are_the_risks_and_potential_returns_of_different_investment_products",
+                    "What_are_the_fees_associated_with_my_account",
+                    "Can_you_explain_a_fee_that_I_see_on_my_account_statement",
+                    "Are_there_ways_to_avoid_certain_fees",
+                    "How_can_I_protect_my_account_from_fraud",
+                    "What_should_I_do_if_I_suspect_fraudulent_activity_on_my_account",
+                    "Can_you_help_me_report_a_lost_or_stolen_card",
+                    "Can_you_provide_advice_on_budgeting_and_saving",
+                    "How_can_I_improve_my_credit_score",
+                    "What_are_some_ways_to_manage_my_debt",
+                    "How_can_I_open_a_business_account",
+                    "What_business_loan_options_are_available",
+                    "Can_you_assist_with_payroll_processing",
+                    "How_can_I_set_up_a_trust_account",
+                    "What_estate_planning_services_do_you_offer",
+                    "other"
+                  ]
+                },
+                "clientFirstName": {
+                  "type": "string"
+                },
+                "clientLastName": {
+                  "type": "string"
+                },
+                "belongsToBank": {
+                  "type": "boolean"
+                },
+                "otherQuery": {
+                  "type": "string"
+                },
+                "clientId": {
+                  "type": "string"
+                },
+                "branchId": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "querieds": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "query": {
+                  "type": "string"
+                },
+                "bankerFirstName": {
+                  "type": "string"
+                },
+                "bankerLastName": {
+                  "type": "string"
+                },
+                "bankerEmployeeId": {
+                  "type": "string"
+                },
+                "clientFirstName": {
+                  "type": "string"
+                },
+                "clientLastName": {
+                  "type": "string"
+                },
+                "belongsToBank": {
+                  "type": "boolean"
+                },
+                "clientId": {
+                  "type": "string"
+                },
+                "branchId": {
+                  "type": "string"
+                },
+                "published_at": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "NewClients": {
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "deposits": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "depositeds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "queries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "querieds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
       "Deposited": {
         "required": [
           "id"
@@ -4347,14 +6688,6 @@
           "accountPhoneNumber": {
             "type": "string"
           },
-          "depositDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "depositedTime": {
-            "type": "string",
-            "format": "date-time"
-          },
           "tailorFirstName": {
             "type": "string"
           },
@@ -4362,6 +6695,12 @@
             "type": "string"
           },
           "tailorEmployeeId": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
             "type": "string"
           },
           "published_at": {
@@ -4393,14 +6732,6 @@
           "accountPhoneNumber": {
             "type": "string"
           },
-          "depositDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "depositedTime": {
-            "type": "string",
-            "format": "date-time"
-          },
           "tailorFirstName": {
             "type": "string"
           },
@@ -4408,6 +6739,12 @@
             "type": "string"
           },
           "tailorEmployeeId": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
             "type": "string"
           },
           "published_at": {
@@ -4452,6 +6789,12 @@
           "accountPhoneNumber": {
             "type": "string"
           },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4482,6 +6825,12 @@
             "type": "string"
           },
           "accountPhoneNumber": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
             "type": "string"
           },
           "published_at": {
@@ -4529,6 +6878,12 @@
             "type": "boolean",
             "default": true
           },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4561,6 +6916,12 @@
           "belongsToBank": {
             "type": "boolean",
             "default": true
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -4664,6 +7025,12 @@
           "otherQuery": {
             "type": "string"
           },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -4752,6 +7119,12 @@
             "default": true
           },
           "otherQuery": {
+            "type": "string"
+          },
+          "clientId": {
+            "type": "string"
+          },
+          "branchId": {
             "type": "string"
           },
           "published_at": {
@@ -5052,6 +7425,15 @@
     }
   },
   "tags": [
+    {
+      "name": "Bank"
+    },
+    {
+      "name": "Branch"
+    },
+    {
+      "name": "Clients"
+    },
     {
       "name": "Deposited"
     },

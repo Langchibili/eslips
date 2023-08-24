@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "branches",
+  "info": {
+    "name": "Branch",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "bank": {
+      "model": "bank"
+    },
+    "deposits": {
+      "collection": "deposits"
+    },
+    "depositeds": {
+      "collection": "deposited"
+    },
+    "queries": {
+      "collection": "queries"
+    },
+    "querieds": {
+      "collection": "queried"
+    }
+  }
+}

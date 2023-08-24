@@ -93,6 +93,12 @@
     },
     "otherQuery": {
       "type": "string"
+    },
+    "clientId": {
+      "type": "string"
+    },
+    "branchId": {
+      "type": "string"
     }
   }
 }
