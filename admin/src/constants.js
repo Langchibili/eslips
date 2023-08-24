@@ -17,14 +17,12 @@ export function getJwt(){
         }
         jwt = localStorage.jwt.split(fakeStr1)[1]
         return jwt.split(fakeStr2)[0]
-    }
-   
+    }  
 } 
 
 export async function getLoggedInUserData(){
     if(getJwt() === null) return 'logged-out' // you are looged out
-    let url
-    const user = await fetch(api_url+'/users/me',{
+    return await fetch(api_url+'/users/me',{
       headers: {
         'Authorization': `Bearer ${getJwt()}`,
         'Content-Type': 'application/json'
@@ -32,19 +30,7 @@ export async function getLoggedInUserData(){
     }).then(response => response.json())
       .then(data => data)
       .catch(error => console.error(error))
-
-    if('error' in user) return 'logged-out' //it means you are looged out
       //.catch(error => return 'logged-out')
-     // get user first to check type, coz we don't know whether user is a driver or car owner
-
-    return await fetch(url,{
-      headers: {
-        'Authorization': `Bearer ${getJwt()}`,
-        'Content-Type': 'application/json'
-      }
-     }).then(response => response.json())
-      .then(data => data)
-      .catch(error => console.error(error))
   }
   
   

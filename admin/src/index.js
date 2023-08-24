@@ -11,37 +11,61 @@ import Queries from './components/Views/Queries';
 import HomePage from './components/Views/HomePage';
 import Header from './components/Header/Header';
 import Queried from './components/Views/Queried';
-import { api_url, getJwt } from './constants';
+import { api_url, getJwt,getLoggedInUserData } from './constants';
 import Login from './components/Views/Login';
 import LogOutFOrm from './Forms/LogOutForm';
+import DetailsDisplay from './components/Includes/DetailsDisplay/DetailsDisplay';
 
 class AppWrapper extends React.Component{
   constructor(props){
     super(props)
     this.state = {
+      loggedInUserData: null,
       data: {
         queries:null,
         deposits:null,
         queried:null,
         deposited:null
+      },
+      counts: {
+        queries:0,
+        deposits:0,
+        queried:0,
+        deposited:0
+      },
+      detailsDisplay:{
+        show: 'hide',
+        data: null,
+        type: null
       }
     }
   }
 
   async componentDidMount(){
-     const queries = await this.getQueries();
-     const desposits = await this.getDeposits();
-     const queried = await this.getQueried();
-     const deposited = await this.getDeposited();
-
-     this.setState({
-      data: {
-        queries:queries,
-        deposits:desposits,
-        queried:queried,
-        deposited:deposited
-      }
-     })
+    const loggedInUserData = await getLoggedInUserData() // check if user is logged in
+    if(loggedInUserData === 'logged-out') {  // if user is logged out
+       window.location = '/login' 
+    }
+    else {
+       this.setState({ // set logged in user data
+        loggedInUserData : loggedInUserData
+       }, async ()=>{  // set all the needed data 
+              const queries = await this.getQueries();
+              const desposits = await this.getDeposits();
+              const queried = await this.getQueried();
+              const deposited = await this.getDeposited();
+              this.setState({ 
+                data: {
+                  queries:queries,
+                  deposits:desposits,
+                  queried:queried,
+                  deposited:deposited
+                }
+              },()=>{ // set counts
+                 console.log(this.state)
+              })
+       })
+    }  
   }
 
   
@@ -68,7 +92,7 @@ class AppWrapper extends React.Component{
       return response
   }
   getQueried = async ()=>{
-    const response = await fetch(api_url+'/queried',{
+    const response = await fetch(api_url+'/querieds',{
       headers: {
         'Authorization': `Bearer ${getJwt()}`,
         'Content-Type': 'application/json'
@@ -80,7 +104,7 @@ class AppWrapper extends React.Component{
   }
   
   getDeposited = async ()=>{
-    const response = await fetch(api_url+'/deposited',{
+    const response = await fetch(api_url+'/depositeds',{
       headers: {
         'Authorization': `Bearer ${getJwt()}`,
         'Content-Type': 'application/json'
@@ -90,20 +114,27 @@ class AppWrapper extends React.Component{
       .catch(error => console.error(error))
       return response
   }
+  
+  handleDetailsDisplay = (detailsDisplay)=>{
+      this.setState({
+        detailsDisplay:detailsDisplay
+      })
+  }
 
   render(){
     return(
         <Router>
           <Routes>
-            <Route path="/" element={<HomePage />}/>
+            <Route path="/" element={<HomePage {...this.state.counts}/>}/>
             <Route path="/login" element={<Login />}/>
             <Route path="/logout" element={<LogOutFOrm />}/>
-            <Route path="/deposits" element={<><Header/><Deposits/></>} />
-            <Route path="/deposited" element={<><Header/><Deposited /></>} />
-            <Route path="/queries" element={<><Header/><Queries/></>} />
-            <Route path="/queried" element={<><Header/><Queried /></>} />
+            <Route path="/deposits" element={<><Header {...this.state.counts}/><Deposits {...this.state} handleDetailsDisplay={this.handleDetailsDisplay}/></>} />
+            <Route path="/deposited" element={<><Header {...this.state.counts}/><Deposited {...this.state} handleDetailsDisplay={this.handleDetailsDisplay}/></>} />
+            <Route path="/queries" element={<><Header {...this.state.counts}/><Queries {...this.state} handleDetailsDisplay={this.handleDetailsDisplay}/></>} />
+            <Route path="/queried" element={<><Header {...this.state.counts}/><Queried {...this.state} handleDetailsDisplay={this.handleDetailsDisplay}/></>} />
           </Routes>
           <Footer/>
+          <DetailsDisplay {...this.state.detailsDisplay}/>
         </Router>
     )
   }
